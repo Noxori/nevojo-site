@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-nv-dark text-nv-txt font-body antialiased; }
+  ::selection { @apply bg-nv-accent text-nv-dark; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-nv-dark; }
+  ::-webkit-scrollbar-thumb { @apply bg-nv-border rounded-full; }
+}
+
+@layer components {
+  .section-container { @apply max-w-6xl mx-auto px-5 lg:px-8; }
+  .section-tag { @apply text-[11px] font-bold tracking-[3px] uppercase text-nv-accent font-display mb-3; }
+  .section-title { @apply text-4xl lg:text-5xl font-extrabold font-display leading-[1.08] tracking-tight text-nv-txt; }
+  .section-sub { @apply text-base text-nv-muted leading-relaxed max-w-xl; }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-nv-accent text-nv-dark font-display font-bold text-sm
+           px-6 py-3 rounded-lg transition-all duration-200 hover:brightness-110 hover:scale-[1.02]
+           active:scale-[0.98] cursor-pointer;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 bg-transparent text-nv-txt font-display font-semibold
+           text-sm px-6 py-3 rounded-lg border border-nv-border hover:border-nv-muted
+           hover:bg-white/5 transition-all duration-200 cursor-pointer;
+  }
+  .btn-outline-accent {
+    @apply inline-flex items-center gap-2 bg-transparent font-display font-bold text-sm
+           px-6 py-3 rounded-lg border transition-all duration-200 cursor-pointer;
+  }
+
+  .card-base { @apply bg-nv-navy border border-nv-border rounded-xl p-6 transition-all duration-300; }
+  .card-hover { @apply hover:border-nv-muted/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/40; }
+
+  .input-base {
+    @apply w-full bg-nv-dark border border-nv-border rounded-lg px-4 py-3 text-sm text-nv-txt
+           placeholder:text-nv-border focus:outline-none focus:border-nv-accent transition-colors duration-200;
+  }
+
+  .tag-pill {
+    @apply text-xs px-2.5 py-1 rounded-full bg-white/5 border border-nv-border text-nv-muted;
+  }
+}
+
+/* Midnight & Aurora glow helpers */
+.bg-glow-tl     { background: radial-gradient(ellipse at top left,    rgba(6,214,199,.06) 0%,transparent 65%); }
+.bg-glow-br     { background: radial-gradient(ellipse at bottom right, rgba(8,145,178,.05) 0%,transparent 65%); }
+.bg-glow-center { background: radial-gradient(ellipse at center,       rgba(6,214,199,.04) 0%,transparent 70%); }
+.bg-glow-purple { background: radial-gradient(ellipse at top right,    rgba(42,45,110,.08) 0%,transparent 60%); }
+.bg-glow-gold   { background: radial-gradient(ellipse at bottom left,  rgba(8,145,178,.04) 0%,transparent 60%); }
