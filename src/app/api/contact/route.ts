@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { z } from 'zod'
 
-export const dynamic = 'force-dynamic'
-
-const getResend = () => new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 const schema = z.object({
   firstName: z.string().min(1),
@@ -26,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     const { firstName, lastName, email, division, subject, message } = parsed.data
 
-    const { data, error } = await getResend().emails.send({
+    const { data, error } = await resend.emails.send({
       from:    'Nevojo Contact <hello@nevojo.com>',
       to:      ['hello@nevojo.com'],
       reply_to: email,

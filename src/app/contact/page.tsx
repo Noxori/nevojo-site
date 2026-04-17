@@ -52,8 +52,8 @@ export default function ContactPage() {
               <div className="card-base">
                 <h2 className="font-display font-bold text-xl text-nv-txt mb-6">{f.title}</h2>
                 {state === 'success' ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-nv-accent/10 border border-nv-accent/30 flex items-center justify-center mx-auto mb-6">
+                  <div className="text-center py-12" role="status" aria-live="polite">
+                    <div aria-hidden="true" className="w-16 h-16 rounded-full bg-nv-accent/10 border border-nv-accent/30 flex items-center justify-center mx-auto mb-6">
                       <span className="text-nv-accent text-2xl font-bold">✓</span>
                     </div>
                     <h3 className="font-display font-bold text-xl text-nv-txt mb-3">{f.success.title}</h3>
@@ -61,40 +61,41 @@ export default function ContactPage() {
                     <button onClick={() => setState('idle')} className="btn-ghost text-sm">{f.success.reset}</button>
                   </div>
                 ) : (
-                  <form onSubmit={submit} className="space-y-5">
+                  <form onSubmit={submit} className="space-y-5" noValidate aria-label="Contact form">
+                    <p className="text-xs text-nv-muted"><span aria-hidden="true">*</span> Required fields</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.firstName} *</label>
-                        <input type="text" required value={form.firstName} onChange={set('firstName')} placeholder={f.placeholders.firstName} className="input-base" />
+                        <label htmlFor="firstName" className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.firstName} <span aria-hidden="true">*</span></label>
+                        <input id="firstName" name="firstName" type="text" required aria-required="true" autoComplete="given-name" value={form.firstName} onChange={set('firstName')} placeholder={f.placeholders.firstName} className="input-base" />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.lastName} *</label>
-                        <input type="text" required value={form.lastName} onChange={set('lastName')} placeholder={f.placeholders.lastName} className="input-base" />
+                        <label htmlFor="lastName" className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.lastName} <span aria-hidden="true">*</span></label>
+                        <input id="lastName" name="lastName" type="text" required aria-required="true" autoComplete="family-name" value={form.lastName} onChange={set('lastName')} placeholder={f.placeholders.lastName} className="input-base" />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.email} *</label>
-                      <input type="email" required value={form.email} onChange={set('email')} placeholder={f.placeholders.email} className="input-base" />
+                      <label htmlFor="email" className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.email} <span aria-hidden="true">*</span></label>
+                      <input id="email" name="email" type="email" required aria-required="true" autoComplete="email" value={form.email} onChange={set('email')} placeholder={f.placeholders.email} className="input-base" />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.division}</label>
-                      <select value={form.division} onChange={set('division')} className="input-base appearance-none">
+                      <label htmlFor="division" className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.division}</label>
+                      <select id="division" name="division" value={form.division} onChange={set('division')} className="input-base appearance-none">
                         <option value="">{f.placeholders.division}</option>
                         {divisions.map((d) => <option key={d.slug} value={d.name}>{d.name} — {d.tagline}</option>)}
                         <option value="General">General Inquiry</option>
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.subject} *</label>
-                      <input type="text" required value={form.subject} onChange={set('subject')} placeholder={f.placeholders.subject} className="input-base" />
+                      <label htmlFor="subject" className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.subject} <span aria-hidden="true">*</span></label>
+                      <input id="subject" name="subject" type="text" required aria-required="true" value={form.subject} onChange={set('subject')} placeholder={f.placeholders.subject} className="input-base" />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.message} *</label>
-                      <textarea required rows={5} value={form.message} onChange={set('message')} placeholder={f.placeholders.message} className="input-base resize-none" />
+                      <label htmlFor="message" className="block text-xs font-semibold text-nv-muted mb-2 uppercase tracking-wider font-display">{f.fields.message} <span aria-hidden="true">*</span></label>
+                      <textarea id="message" name="message" required aria-required="true" rows={5} value={form.message} onChange={set('message')} placeholder={f.placeholders.message} className="input-base resize-none" />
                     </div>
-                    {state === 'error' && <p className="text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-4 py-3">{errMsg}</p>}
-                    <button type="submit" disabled={state === 'sending'} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
-                      {state === 'sending' ? 'Sending...' : `${f.submit} ↗`}
+                    {state === 'error' && <p role="alert" className="text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-4 py-3">{errMsg}</p>}
+                    <button type="submit" disabled={state === 'sending'} aria-busy={state === 'sending'} className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed">
+                      {state === 'sending' ? 'Sending...' : <>{f.submit} <span aria-hidden="true">↗</span></>}
                     </button>
                   </form>
                 )}

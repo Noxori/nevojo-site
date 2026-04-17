@@ -47,8 +47,8 @@ export default function CookieBanner() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-5">
               {/* Icon + text */}
               <div className="flex items-start gap-4 flex-1 min-w-0">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-nv-accent/10 border border-nv-accent/25 flex items-center justify-center mt-0.5">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div aria-hidden="true" className="flex-shrink-0 w-9 h-9 rounded-lg bg-nv-accent/10 border border-nv-accent/25 flex items-center justify-center mt-0.5">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <circle cx="8" cy="8" r="7" stroke="#06D6C7" strokeWidth="1.2"/>
                     <circle cx="5.5" cy="6.5" r="1" fill="#06D6C7"/>
                     <circle cx="10" cy="5" r="0.8" fill="#06D6C7"/>

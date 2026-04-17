@@ -36,9 +36,9 @@ export default function Navbar() {
           : 'bg-transparent'
       )}>
         <div className="section-container">
-          <nav className="flex items-center justify-between h-16">
+          <nav className="flex items-center justify-between h-16" aria-label="Primary">
             {/* Logo — clean wordmark only, no subtext */}
-            <Link href="/" className="font-display font-extrabold text-lg tracking-wide">
+            <Link href="/" aria-label="Nevojo Technologies — home" className="font-display font-extrabold text-lg tracking-wide">
               <span className="text-nv-txt">NEVO</span><span className="text-nv-accent">JO</span>
             </Link>
 
@@ -48,6 +48,7 @@ export default function Navbar() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
+                    aria-current={pathname === l.href ? 'page' : undefined}
                     className={clsx(
                       'text-sm transition-colors duration-200 relative py-1',
                       pathname === l.href
@@ -59,6 +60,7 @@ export default function Navbar() {
                     {pathname === l.href && (
                       <motion.span
                         layoutId="nav-underline"
+                        aria-hidden="true"
                         className="absolute -bottom-0.5 left-0 right-0 h-px bg-nv-accent"
                       />
                     )}
@@ -69,7 +71,7 @@ export default function Navbar() {
 
             <div className="hidden lg:flex items-center gap-3">
               <Link href="/contact" className="btn-primary text-xs px-4 py-2">
-                Work With Us ↗
+                Work With Us <span aria-hidden="true">↗</span>
               </Link>
             </div>
 
@@ -77,11 +79,13 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden flex flex-col gap-[5px] p-2 rounded-md hover:bg-white/5 transition-colors"
-              aria-label="Menu"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
             >
-              <span className={clsx('block w-5 h-0.5 bg-nv-txt transition-all duration-200 origin-center', open && 'rotate-45 translate-y-[7px]')} />
-              <span className={clsx('block w-5 h-0.5 bg-nv-txt transition-all duration-200', open && 'opacity-0 scale-x-0')} />
-              <span className={clsx('block w-5 h-0.5 bg-nv-txt transition-all duration-200 origin-center', open && '-rotate-45 -translate-y-[7px]')} />
+              <span aria-hidden="true" className={clsx('block w-5 h-0.5 bg-nv-txt transition-all duration-200 origin-center', open && 'rotate-45 translate-y-[7px]')} />
+              <span aria-hidden="true" className={clsx('block w-5 h-0.5 bg-nv-txt transition-all duration-200', open && 'opacity-0 scale-x-0')} />
+              <span aria-hidden="true" className={clsx('block w-5 h-0.5 bg-nv-txt transition-all duration-200 origin-center', open && '-rotate-45 -translate-y-[7px]')} />
             </button>
           </nav>
         </div>
@@ -91,6 +95,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity:0, y:-8 }}
             animate={{ opacity:1, y:0 }}
             exit={{ opacity:0, y:-8 }}
@@ -102,6 +107,7 @@ export default function Navbar() {
                 <motion.div key={l.href} initial={{ opacity:0, x:-10 }} animate={{ opacity:1, x:0 }} transition={{ delay:i * 0.05 }}>
                   <Link
                     href={l.href}
+                    aria-current={pathname === l.href ? 'page' : undefined}
                     className={clsx(
                       'block py-3 px-4 rounded-lg text-base font-semibold font-display transition-colors',
                       pathname === l.href ? 'text-nv-accent bg-nv-accent/10' : 'text-nv-txt hover:bg-white/5'
@@ -112,7 +118,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <div className="pt-4 mt-2 border-t border-nv-border">
-                <Link href="/contact" className="btn-primary w-full justify-center">Work With Us ↗</Link>
+                <Link href="/contact" className="btn-primary w-full justify-center">Work With Us <span aria-hidden="true">↗</span></Link>
               </div>
             </div>
           </motion.div>
