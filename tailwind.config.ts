@@ -15,7 +15,7 @@ const config: Config = {
           navy:   '#12142B',
           mid:    '#1E2047',
           border: '#1E2047',
-          muted:  '#6B6F9E',
+          muted:  '#9498C4',
           txt:    '#E8E8FF',
           accent: '#06D6C7',
           blue:   '#0891B2',
