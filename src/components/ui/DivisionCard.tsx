@@ -38,11 +38,11 @@ export default function DivisionCard({ division, featured=false }: { division:Di
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-2">
-            <span className="text-[10px] font-bold tracking-[2px] uppercase font-display" style={{ color:division.accentColor }}>
+            <span className="text-xs font-bold tracking-[2px] uppercase font-display" style={{ color:division.accentColor }}>
               {division.tagline}
             </span>
             <span
-              className="text-[10px] px-2 py-0.5 rounded-full border font-bold"
+              className="text-xs px-2 py-0.5 rounded-full border font-bold"
               style={{ color:division.accentColor, borderColor:`${division.accentColor}40`, background:`${division.accentColor}10` }}
             >
               {statusLabel[division.status]}

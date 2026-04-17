@@ -75,10 +75,10 @@ export const posts: Post[] = [
 export const getPost = (slug: string) => posts.find((p) => p.slug === slug)
 
 export const categoryColors: Record<string, string> = {
-  'AI & Tech':  '#1A6EFF',
+  'AI & Tech':  '#60A5FA',
   'Business':   '#00F0B5',
   'Hardware':   '#F59E0B',
-  'Founders':   '#7C3AED',
+  'Founders':   '#A78BFA',
   'SaaS':       '#00F0B5',
-  'Investment': '#7C3AED',
+  'Investment': '#A78BFA',
 }

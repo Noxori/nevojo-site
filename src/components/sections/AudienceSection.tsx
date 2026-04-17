@@ -18,7 +18,7 @@ export default function AudienceSection() {
                 <div className="w-8 h-8 rounded-lg bg-nv-accent/10 border border-nv-accent/20 flex items-center justify-center mx-auto mb-4">
                   <span className="text-nv-accent text-sm font-bold">◈</span>
                 </div>
-                <h4 className="font-display font-bold text-sm text-nv-txt mb-2">{a.title}</h4>
+                <h3 className="font-display font-bold text-sm text-nv-txt mb-2">{a.title}</h3>
                 <p className="text-sm text-nv-muted leading-relaxed">{a.body}</p>
               </div>
             </FadeIn>

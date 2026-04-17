@@ -31,20 +31,21 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-nv-navy">
+      <section className="py-20 bg-nv-navy" aria-labelledby="services-catalog-heading">
         <div className="section-container">
+          <h2 id="services-catalog-heading" className="sr-only">Services Catalog</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((svc, i) => (
               <FadeIn key={svc.id} delay={i * 0.08}>
                 <div className={`relative rounded-xl border bg-nv-dark p-7 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/40 group ${svc.popular ? 'border-nv-accent/40' : 'border-nv-border hover:border-nv-muted/50'}`}>
                   {svc.popular && (
                     <div className="absolute -top-3 left-6">
-                      <span className="bg-nv-accent text-nv-dark text-[10px] font-bold px-3 py-1 rounded-full font-display tracking-wide">Most Popular</span>
+                      <span className="bg-nv-accent text-nv-dark text-xs font-bold px-3 py-1 rounded-full font-display tracking-wide">Most Popular</span>
                     </div>
                   )}
                   <div className="absolute top-0 inset-x-0 h-[2px] rounded-t-xl opacity-50 group-hover:opacity-100 transition-opacity" style={{ background: svc.accentColor }} />
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-bold tracking-[2px] uppercase font-display px-2.5 py-1 rounded-full border"
+                    <span className="text-xs font-bold tracking-[2px] uppercase font-display px-2.5 py-1 rounded-full border"
                       style={{ color:svc.accentColor, borderColor:`${svc.accentColor}40`, background:`${svc.accentColor}10` }}>
                       {svc.division}
                     </span>
@@ -85,7 +86,7 @@ export default function ServicesPage() {
               <FadeIn key={s.step} delay={i * 0.1}>
                 <div className="card-base card-hover h-full">
                   <div className="font-display font-extrabold text-3xl text-nv-border mb-4">{s.step}</div>
-                  <h4 className="font-display font-bold text-sm text-nv-accent mb-2">{s.title}</h4>
+                  <h3 className="font-display font-bold text-sm text-nv-accent mb-2">{s.title}</h3>
                   <p className="text-sm text-nv-muted leading-relaxed">{s.body}</p>
                 </div>
               </FadeIn>

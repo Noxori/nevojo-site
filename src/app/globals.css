@@ -36,7 +36,7 @@
 
 @layer components {
   .section-container { @apply max-w-6xl mx-auto px-5 lg:px-8; }
-  .section-tag { @apply text-[11px] font-bold tracking-[3px] uppercase text-nv-accent font-display mb-3; }
+  .section-tag { @apply text-xs font-bold tracking-[3px] uppercase text-nv-accent font-display mb-3; }
   .section-title { @apply text-4xl lg:text-5xl font-extrabold font-display leading-[1.08] tracking-tight text-nv-txt; }
   .section-sub { @apply text-base text-nv-muted leading-relaxed max-w-xl; }
 

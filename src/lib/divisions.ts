@@ -41,8 +41,8 @@ export const divisions: Division[] = [
       'The AI research and intelligence arm of Nevojo. Oryniq develops next-generation intelligence tools, AI-powered products, and research systems — where light meets IQ.',
     longDescription:
       'Oryniq sits at the frontier of artificial intelligence. Named to evoke "oryn" (light, horizon) combined with IQ, this division focuses on building AI systems that illuminate — making intelligence accessible, transparent, and purposeful. From intelligence APIs to research tools, Oryniq pushes the boundary of what AI can do.',
-    accentColor: '#1A6EFF',
-    textColor:   '#ffffff',
+    accentColor: '#60A5FA',
+    textColor:   '#050810',
     focus:       'AI Research · Intelligence Tools · AI-Powered Products',
     tags:        ['AI Research','Intelligence APIs','ML Tools','AI Products','Data Intelligence'],
     features: [
@@ -81,8 +81,8 @@ export const divisions: Division[] = [
       'The dark intelligence tier of Nevojo. Noxori is the premium, high-stakes brand — exclusive tools, elite-grade intelligence products, strategic tech investment, and sophisticated solutions for those who demand the best.',
     longDescription:
       'Noxori operates at the highest tier of the Nevojo ecosystem. This is the brand for premium clients, exclusive products, sophisticated intelligence solutions, and strategic tech investment — where performance, discretion, and excellence are non-negotiable. Dark in aesthetic, uncompromising in quality.',
-    accentColor: '#7C3AED',
-    textColor:   '#ffffff',
+    accentColor: '#A78BFA',
+    textColor:   '#050810',
     focus:       'Premium Intelligence · Exclusive Tools · Strategic Tech Investment',
     tags:        ['Premium','Elite','Exclusive','Dark Intelligence','Tech Investment','High-Stakes'],
     features: [

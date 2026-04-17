@@ -54,7 +54,7 @@ export const services: Service[] = [
     features:    ['Custom ML model integration','Intelligence API development','Data pipeline architecture','Research tool development','AI product strategy','Performance monitoring'],
     priceFrom:   '$3,000',
     division:    'Oryniq',
-    accentColor: '#1A6EFF',
+    accentColor: '#60A5FA',
   },
   {
     id:          'custom-pc-builds',
@@ -72,6 +72,6 @@ export const services: Service[] = [
     features:    ['Executive tech strategy','Proprietary intelligence tools','Strategic tech investment guidance','Confidential & NDA-protected','Dedicated account management','Priority access to Nevojo R&D'],
     priceFrom:   'By inquiry',
     division:    'Noxori',
-    accentColor: '#7C3AED',
+    accentColor: '#A78BFA',
   },
 ]

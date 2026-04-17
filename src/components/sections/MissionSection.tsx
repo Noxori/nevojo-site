@@ -26,7 +26,7 @@ export default function MissionSection() {
                     <span className="w-1.5 h-1.5 rounded-full bg-nv-accent block" />
                   </div>
                   <div>
-                    <h5 className="font-display font-semibold text-sm text-nv-txt mb-1">{p.title}</h5>
+                    <h3 className="font-display font-semibold text-sm text-nv-txt mb-1">{p.title}</h3>
                     <p className="text-sm text-nv-muted leading-relaxed">{p.body}</p>
                   </div>
                 </div>

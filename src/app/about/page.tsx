@@ -71,7 +71,7 @@ export default function AboutPage() {
             {values.items.map((v, i) => (
               <FadeIn key={v.title} delay={i * 0.1}>
                 <div className="card-base card-hover h-full group">
-                  <h4 className="font-display font-bold text-base text-nv-accent mb-3 group-hover:brightness-110 transition-all">{v.title}</h4>
+                  <h3 className="font-display font-bold text-base text-nv-accent mb-3 group-hover:brightness-110 transition-all">{v.title}</h3>
                   <p className="text-sm text-nv-muted leading-relaxed">{v.body}</p>
                 </div>
               </FadeIn>

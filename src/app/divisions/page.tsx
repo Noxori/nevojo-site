@@ -28,8 +28,9 @@ export default function DivisionsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-nv-navy">
+      <section className="py-20 bg-nv-navy" aria-labelledby="divisions-list-heading">
         <div className="section-container">
+          <h2 id="divisions-list-heading" className="sr-only">Our Four Divisions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {divisions.map((d, i) => (
               <FadeIn key={d.slug} delay={i * 0.1} className={i === 0 || i === 3 ? 'md:col-span-2' : ''}>
@@ -60,7 +61,7 @@ export default function DivisionsPage() {
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
                 <div className="card-base card-hover h-full">
-                  <h4 className="font-display font-bold text-sm text-nv-accent mb-3">{item.title}</h4>
+                  <h3 className="font-display font-bold text-sm text-nv-accent mb-3">{item.title}</h3>
                   <p className="text-sm text-nv-muted leading-relaxed">{item.body}</p>
                 </div>
               </FadeIn>

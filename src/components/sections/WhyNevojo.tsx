@@ -21,7 +21,7 @@ export default function WhyNevojo() {
             <FadeIn key={d.num} delay={i * 0.08}>
               <div className="card-base card-hover h-full">
                 <div className="font-display font-extrabold text-3xl text-nv-border mb-4">{d.num}</div>
-                <h4 className="font-display font-bold text-sm text-nv-txt mb-2">{d.title}</h4>
+                <h3 className="font-display font-bold text-sm text-nv-txt mb-2">{d.title}</h3>
                 <p className="text-sm text-nv-muted leading-relaxed">{d.body}</p>
               </div>
             </FadeIn>

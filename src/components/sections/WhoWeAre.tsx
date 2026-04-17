@@ -20,7 +20,7 @@ export default function WhoWeAre() {
           {who.cards.map((c, i) => (
             <FadeIn key={c.title} delay={i * 0.1}>
               <div className={`card-base h-full ${i === 0 ? 'border-nv-accent/25 bg-nv-accent/5' : 'card-hover'}`}>
-                <h4 className="font-display font-bold text-sm text-nv-txt mb-3">{c.title}</h4>
+                <h3 className="font-display font-bold text-sm text-nv-txt mb-3">{c.title}</h3>
                 <p className="text-sm text-nv-muted leading-relaxed">{c.body}</p>
               </div>
             </FadeIn>

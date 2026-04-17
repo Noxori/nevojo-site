@@ -65,12 +65,12 @@ export default function BlogPostPage({ params }: Props) {
 
             {/* Meta */}
             <div className="flex items-center gap-2 mb-6 flex-wrap">
-              <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border"
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full border"
                 style={{ color:catColor, borderColor:`${catColor}40`, background:`${catColor}10` }}>
                 {post.category}
               </span>
               {division && (
-                <span className="text-[10px] font-bold px-2.5 py-1 rounded-full border"
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full border"
                   style={{ color:division.accentColor, borderColor:`${division.accentColor}40`, background:`${division.accentColor}10` }}>
                   {division.name}
                 </span>
@@ -111,7 +111,7 @@ export default function BlogPostPage({ params }: Props) {
         <section className="py-16 bg-nv-dark border-t border-nv-border">
           <div className="section-container">
             <FadeIn>
-              <p className="section-tag mb-6">More from Nevojo Insights</p>
+              <h2 className="section-tag mb-6">More from Nevojo Insights</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 {relatedPosts.map((p, i) => {
                   const cc = categoryColors[p.category] ?? '#00F0B5'
@@ -119,7 +119,7 @@ export default function BlogPostPage({ params }: Props) {
                     <FadeIn key={p.slug} delay={i * 0.1}>
                       <Link href={`/blog/${p.slug}`} className="group block card-base card-hover h-full relative overflow-hidden">
                         <div className="absolute top-0 inset-x-0 h-[2px] rounded-t-xl" style={{ background:cc }} />
-                        <span className="text-[10px] font-bold mb-3 block" style={{ color:cc }}>{p.category}</span>
+                        <span className="text-xs font-bold mb-3 block" style={{ color:cc }}>{p.category}</span>
                         <h3 className="font-display font-bold text-sm text-nv-txt group-hover:text-white transition-colors mb-2 leading-snug">
                           {p.title}
                         </h3>

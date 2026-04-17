@@ -23,9 +23,9 @@ const config: Config = {
           purple: '#3730A3',
         },
         guavamatic: '#00F0B5',
-        oryniq:     '#1A6EFF',
+        oryniq:     '#60A5FA',
         kazuriq:    '#F59E0B',
-        noxori:     '#7C3AED',
+        noxori:     '#A78BFA',
       },
       fontFamily: {
         display: ['var(--font-syne)', 'sans-serif'],

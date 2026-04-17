@@ -49,10 +49,10 @@ export default function DivisionPage({ params }: Props) {
                 {division.name[0]}
               </div>
               <div>
-                <p className="text-[10px] font-bold tracking-[2px] uppercase font-display" style={{ color:division.accentColor }}>
+                <p className="text-xs font-bold tracking-[2px] uppercase font-display" style={{ color:division.accentColor }}>
                   {division.tagline}
                 </p>
-                <span className="text-[10px] px-2 py-0.5 rounded-full border inline-flex mt-1 font-bold"
+                <span className="text-xs px-2 py-0.5 rounded-full border inline-flex mt-1 font-bold"
                   style={{ color:division.accentColor, borderColor:`${division.accentColor}40`, background:`${division.accentColor}10` }}>
                   {division.status === 'live' ? 'Live' : division.status === 'active' ? 'Active' : division.status === 'launching' ? 'Launching Soon' : 'Coming Soon'}
                 </span>
@@ -102,7 +102,7 @@ export default function DivisionPage({ params }: Props) {
                     <div className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background:division.accentColor }} />
                       <div>
-                        <h4 className="font-display font-bold text-sm text-nv-txt mb-1">{f.title}</h4>
+                        <h3 className="font-display font-bold text-sm text-nv-txt mb-1">{f.title}</h3>
                         <p className="text-xs text-nv-muted leading-relaxed">{f.desc}</p>
                       </div>
                     </div>
@@ -128,7 +128,7 @@ export default function DivisionPage({ params }: Props) {
                   className="block card-base card-hover group relative overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-0.5 opacity-50 group-hover:opacity-100 transition-opacity"
                     style={{ background:d.accentColor }} />
-                  <p className="text-[10px] font-bold tracking-[2px] uppercase font-display mb-1" style={{ color:d.accentColor }}>
+                  <p className="text-xs font-bold tracking-[2px] uppercase font-display mb-1" style={{ color:d.accentColor }}>
                     {d.tagline}
                   </p>
                   <h3 className="font-display font-extrabold text-lg text-nv-txt mb-2">{d.name}</h3>
